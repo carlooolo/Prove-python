@@ -8,7 +8,7 @@ window.title("PROVA")
 window.configure(background="white")
 stato = tk.Label(window)
 
-def processo_iniziato():
+def processo_iniziato(): 
     global stato
     stato.destroy()
     stato=tk.Label(text=("iniziato"))

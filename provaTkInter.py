@@ -10,10 +10,10 @@ window.configure(background="white")
 my_img=ImageTk.PhotoImage(Image.open("logo.png"))
 img=tk.Label(image=my_img)
 img.configure(background="white")
-img.grid(row=0,column=0)
+img.grid(row=0,column=0,columnspan=2)
 
 quit_button = tk.Button(text="esci", command=window.quit)
-quit_button.grid(row=0,column=1)
+quit_button.grid(row=0,column=2)
 
 if __name__ == "__main__":
     window.mainloop()
