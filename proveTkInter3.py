@@ -33,10 +33,10 @@ img=tk.Label(image=my_img)
 img.configure(background="white")
 img.grid(row=0,column=0,columnspan=2)
 
-start_button = tk.Button(text="INIZIA PROCESSO", command=processo_iniziato)
+start_button = tk.Button(text="INIZIA PROCESSO", bd=5, command=processo_iniziato)
 start_button.grid(row=1, column=0)
 
-stop_button = tk.Button(text="FERMA IL PROCESSO", command=processo_stop)
+stop_button = tk.Button(text="FERMA IL PROCESSO", bd=5, command=processo_stop)      #bd per il bordo
 stop_button.grid(row=1, column=1)
 
 quit_button = tk.Button(text="esci", command=window.quit)
