@@ -1,21 +1,10 @@
-import tkinter as tk
-from PIL import ImageTk, Image
-from tkinter import messagebox
-
-window = tk.Tk()
-#window.geometry("600x600")
-window.title("PROVA")
-window.resizable(False,False)
-window.configure(background="white")
-
-
-
-def processo_iniziato(): 
-    stato=tk.Label(window, text=("BUONASERA"), font=(30))
-    stato.pack()
-
-stop_button = tk.Button(text="MONDOPIZZA", command=processo_iniziato())
-stop_button.pack()
-
-if __name__ == "__main__":
-    window.mainloop()
+import tkinter
+from tkinter.constants import *
+tk = tkinter.Tk()
+frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
+frame.pack(fill=BOTH,expand=1)
+label = tkinter.Label(frame, text="Hello, World")
+label.pack(fill=X, expand=1)
+button = tkinter.Button(frame,text="Exit",command=tk.destroy)
+button.pack(side=BOTTOM)
+tk.mainloop()
