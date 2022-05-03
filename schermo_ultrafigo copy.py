@@ -14,37 +14,38 @@ f.iconphoto(False, photo)
 photo2= PhotoImage(file='logo.png') #cambiare in base al tuo nome
 label=Label(f, text="PROJECT WORK", image=photo2, font=('Arial',35,'bold'),compound='bottom')
 label.pack()
-stato = Label(tab2, text="non avviato", font=(30))
+stato = Label(text="non avviato", font=(50))
 myfont= font.Font(size=25)
 myfont2= font.Font(size=15)
 myfont3= font.Font(size=20)
 
-if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-    ser.reset_input_buffer()
+#if __name__ == '__main__':
+#    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+#    ser.reset_input_buffer()
 
 def tab1():
     def tab2():
         def set_text_by_start():
             global stato
             stato.destroy()
-            stato=Label(text=("INIZIATO"), font=(30))
-            stato.pack
-            ser.write(b"1")
+            stato=Label(text=("INIZIATO"))
+            stato['font']= myfont3
+            stato.pack()
+            '''ser.write(b"1")
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
-            time.sleep(1)
-            #sample_text.pack(side=TOP, pady=75)
+            time.sleep(1)'''
         def set_text_by_stop():
             global stato
             stato.destroy()
-            stato=Label(text=("TERMINATO"), font=(30))
-            stato.pack
-            ser.write(b"0")
+            stato=Label(text=("TERMINATO"), font=(50))
+            stato.pack()
+            '''ser.write(b"0")
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
-            time.sleep(1)
+            time.sleep(1)'''
         stato.pack()
+        
         button_avvio.destroy()
         button_esci.destroy()
         button_start= Button(f, text='START', background='#b0bbc1', activebackground='#78d6ff', command=set_text_by_start)

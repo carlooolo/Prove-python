@@ -18,9 +18,9 @@ myfont= font.Font(size=25)
 myfont2= font.Font(size=15)
 myfont3= font.Font(size=20)
 
-if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-    ser.reset_input_buffer()
+#if __name__ == '__main__':
+#    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+#    ser.reset_input_buffer()
 
 def tab1():
     def tab2():
