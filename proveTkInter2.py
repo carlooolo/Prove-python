@@ -25,7 +25,7 @@ def processo_stop():
 my_img=ImageTk.PhotoImage(Image.open("logo.png"))
 img=tk.Label(image=my_img)
 img.configure(background="white")
-img.grid(row=0,column=0,columnspan=2)
+img.pack()
 
 start_button = tk.Button(text="INIZIA PROCESSO", command=processo_iniziato)
 start_button.grid(row=1, column=0)
