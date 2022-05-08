@@ -18,9 +18,9 @@ myfont= font.Font(size=25)
 myfont2= font.Font(size=15)
 myfont3= font.Font(size=20)
 
-#if __name__ == '__main__':
-#    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-#    ser.reset_input_buffer()
+if __name__ == '__main__':
+    ser = serial.Serial('COM7 ', 9600, timeout=1)
+    ser.reset_input_buffer()
 
 def tab1():
     def tab2():
@@ -37,7 +37,7 @@ def tab1():
             sample_text.delete(0,"end")
             sample_text.insert(0, "Macchina fermata!")
             sample_text['font']= myfont3
-            ser.write(b"0")
+            ser.write(b"2")
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
             time.sleep(1)
