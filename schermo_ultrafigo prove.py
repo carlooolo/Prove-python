@@ -19,21 +19,33 @@ myfont2= font.Font(size=15)
 myfont3= font.Font(size=20)
 
 if __name__ == '__main__':
-    ser = serial.Serial('COM7', 9600, timeout=1)
+    ser = serial.Serial('COM10', 9600, timeout=1)
     ser.reset_input_buffer()
 
 def tab1():
-    
+    time.sleep(1)
+    ser.write(b'5')
+    time.sleep(1)
+    line = ser.readline().decode('utf-8').rstrip()
+    print(line)
+
+
     def tab2():
-        
+        ser.write(b'3')
+        time.sleep(1)
+        line = ser.readline().decode('utf-8').rstrip()
+        print(line)
+
+
         def set_text_by_start():
             sample_text.delete(0,"end")
             sample_text.insert(0, "Macchina in funzione!")
             sample_text['font']= myfont3
             ser.write(b"1")
+            time.sleep(0.5)
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
-            time.sleep(1)
+            
             #sample_text.pack(side=TOP, pady=75)
         
         def set_text_by_stop():
@@ -60,6 +72,8 @@ def tab1():
         def back():
             ser.write(b'2')
             time.sleep(1)
+            line = ser.readline().decode('utf-8').rstrip()
+            print(line)
 
             button_start.destroy()
             button_back.destroy()
